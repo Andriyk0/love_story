@@ -9,19 +9,20 @@ export default function StepDateTime({ onNext, accent = '#ff6b9d' }) {
 
   const inputStyle = {
     width: '100%',
-    padding: '16px 20px',
+    boxSizing: 'border-box',
+    padding: 'clamp(14px, 3vw, 18px) clamp(16px, 4vw, 22px)',
     borderRadius: '16px',
     border: '2px solid rgba(255,255,255,0.15)',
     background: 'rgba(255,255,255,0.07)',
     color: 'white',
-    fontSize: '18px',
+    fontSize: 'clamp(15px, 3.5vw, 18px)',
     outline: 'none',
     cursor: 'pointer',
     colorScheme: 'dark',
   }
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '64px 40px' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 'clamp(40px, 8vw, 64px) clamp(20px, 6vw, 40px)' }}>
       <motion.div
         style={{ textAlign: 'center', maxWidth: '460px', width: '100%', margin: '0 auto' }}
         initial={{ opacity: 0, y: 30 }}
@@ -29,10 +30,10 @@ export default function StepDateTime({ onNext, accent = '#ff6b9d' }) {
         transition={{ duration: 0.6 }}
       >
         <div style={{ fontSize: '64px', marginBottom: '20px' }}>📅</div>
-        <h2 className="font-playfair" style={{ fontSize: '44px', fontWeight: 700, color: 'white', marginBottom: '12px' }}>
+        <h2 className="font-playfair" style={{ fontSize: 'clamp(28px, 8vw, 44px)', fontWeight: 700, color: 'white', marginBottom: '12px' }}>
           Коли зустрічаємось?
         </h2>
-        <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '40px', fontSize: '18px' }}>
+        <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: 'clamp(28px, 6vw, 40px)', fontSize: 'clamp(15px, 3.5vw, 18px)' }}>
           Обери зручну дату і час
         </p>
 
@@ -68,12 +69,13 @@ export default function StepDateTime({ onNext, accent = '#ff6b9d' }) {
           disabled={!canProceed}
           style={{
             width: '100%',
-            padding: '18px 32px',
+            boxSizing: 'border-box',
+            padding: 'clamp(14px, 3vw, 18px) clamp(24px, 6vw, 32px)',
             borderRadius: '9999px',
             border: 'none',
             background: canProceed ? `linear-gradient(135deg, ${accent}, #c44dff)` : 'rgba(255,255,255,0.1)',
             color: 'white',
-            fontSize: '20px',
+            fontSize: 'clamp(16px, 4vw, 20px)',
             fontWeight: 600,
             cursor: canProceed ? 'pointer' : 'not-allowed',
             opacity: canProceed ? 1 : 0.35,
